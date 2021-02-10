@@ -18,32 +18,18 @@
 </head>
 
 <body>
-	<!-- <script type="x-shader/x-vertex" id="vertexShader">
-		varying vec3 vWorldPosition;
-
-		void main() {
-			vec4 worldPosition = modelMatrix * vec4( position, 1.0 );
-			vWorldPosition = worldPosition.xyz;
-
-			gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-
-		}
-	</script> -->
-	
-
 	<script type="module">
-		import * as THREE from "./node_modules/three/build/three.module.js";
+		import * as THREE from "https://unpkg.com/three/build/three.module.js";
 		import { OrbitControls } from "./js/OrbitControls.js";
-		import { GLTFLoader } from "./node_modules/three/examples/jsm/loaders/GLTFLoader.js";
+		import { GLTFLoader } from "https://unpkg.com/three/examples/jsm/loaders/GLTFLoader.js";
 
 		const scene = new THREE.Scene();
-		const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 10);
+		const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 20);
 
 		const renderer = new THREE.WebGLRenderer();
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		document.body.appendChild(renderer.domElement);
 
-		// const vertexShader = document.getElementById()
 		// Add model to scene
 		const loader = new GLTFLoader().setPath("./assets/");
 		loader.load("scene3.gltf", function (gltf) {
@@ -58,10 +44,10 @@
 		imgLoader.load("./assets/RandD-Spinwall-background.png", function(texture) {
 			scene.background = texture
 		})
-		
+
 		// Enable Orbit Controls and Set Camera Positions
 		const controls = new OrbitControls(camera, renderer.domElement);
-		camera.position.set(2, 2, 2);
+		camera.position.set( 4, 4, 5);
 		controls.update();
 
 		const animate = function () {

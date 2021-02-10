@@ -30,12 +30,12 @@ var OrbitControls = function ( object, domElement ) {
 	this.target = new Vector3();
 
 	// How far you can dolly in and out ( PerspectiveCamera only )
-	this.minDistance = 0;
-	this.maxDistance = Infinity;
+	this.minDistance = 4;
+	this.maxDistance = 8;
 
 	// How far you can zoom in and out ( OrthographicCamera only )
-	this.minZoom = 0;
-	this.maxZoom = Infinity;
+	this.minZoom = .01;
+	this.maxZoom = 100;
 
 	// How far you can orbit vertically, upper and lower limits.
 	// Range is 0 to Math.PI radians.
@@ -54,7 +54,7 @@ var OrbitControls = function ( object, domElement ) {
 
 	// This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
 	// Set to false to disable zooming
-	this.enableZoom = false;
+	this.enableZoom = true;
 	this.zoomSpeed = 1.0;
 
 	// Set to false to disable rotating
@@ -69,8 +69,8 @@ var OrbitControls = function ( object, domElement ) {
 
 	// Set to true to automatically rotate around the target
 	// If auto-rotate is enabled, you must call controls.update() in your animation loop
-	this.autoRotate = false;
-	this.autoRotateSpeed = 2.0; // 30 seconds per round when fps is 60
+	this.autoRotate = true;
+	this.autoRotateSpeed = 1.0; // 30 seconds per round when fps is 60
 
 	// The four arrow keys
 	this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
