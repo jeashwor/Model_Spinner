@@ -1,0 +1,23 @@
+{
+  "name": "model_spinner",
+  "version": "1.0.0",
+  "description": "Application using three.js to spin a 3D object around in all directions.",
+  "main": "index.js",
+  "dependencies": {
+    "three": "^0.125.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeashwor/Model_Spinner.git"
+  },
+  "author": "Jashworth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeashwor/Model_Spinner/issues"
+  },
+  "homepage": "https://github.com/jeashwor/Model_Spinner#readme"
+}
