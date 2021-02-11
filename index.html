@@ -31,7 +31,7 @@
 		
 		// Add model to scene
 		const loader = new GLTFLoader().setPath("./assets/");
-		loader.load("scene11.gltf", function (gltf) {
+		loader.load("scene1.gltf", function (gltf) {
 			scene.add(gltf.scene);
 		}, function (xhr) {
 			console.log((xhr.loaded / xhr.total * 100) + '% loaded');
