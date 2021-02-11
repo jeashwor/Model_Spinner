@@ -25,29 +25,33 @@
 
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 20);
-
 		const renderer = new THREE.WebGLRenderer();
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		document.body.appendChild(renderer.domElement);
-
+		
 		// Add model to scene
 		const loader = new GLTFLoader().setPath("./assets/");
-		loader.load("scene3.gltf", function (gltf) {
+		loader.load("scene1.gltf", function (gltf) {
 			scene.add(gltf.scene);
 		}, function (xhr) {
 			console.log((xhr.loaded / xhr.total * 100) + '% loaded');
 		}, function (error) {
 			console.error(error);
 		});
-
+		
 		const imgLoader = new THREE.TextureLoader();
 		imgLoader.load("./assets/RandD-Spinwall-background.png", function(texture) {
 			scene.background = texture
 		})
+		
+		const directionalLight = new THREE.DirectionalLight( 0xffff00, 1 );
+		directionalLight.position.set( 10, 10, 10 );
+		directionalLight.castShadow = true;
+		scene.add( directionalLight );
 
 		// Enable Orbit Controls and Set Camera Positions
 		const controls = new OrbitControls(camera, renderer.domElement);
-		camera.position.set( 4, 4, 5);
+		camera.position.set( 4, 1, 1);
 		controls.update();
 
 		const animate = function () {
