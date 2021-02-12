@@ -31,7 +31,7 @@
 		
 		// Add model to scene
 		const loader = new GLTFLoader().setPath("./assets/");
-		loader.load("scene1.gltf", function (gltf) {
+		loader.load("scene14.gltf", function (gltf) {
 			scene.add(gltf.scene);
 		}, function (xhr) {
 			console.log((xhr.loaded / xhr.total * 100) + '% loaded');
@@ -44,10 +44,9 @@
 			scene.background = texture
 		})
 		
-		const directionalLight = new THREE.DirectionalLight( 0xffff00, 1 );
-		directionalLight.position.set( 10, 10, 10 );
-		directionalLight.castShadow = true;
-		scene.add( directionalLight );
+		const ambientLight = new THREE.AmbientLight( 0xffffff, 2.5 );
+		ambientLight.position.set( 10, 10, 10 );
+		scene.add( ambientLight );
 
 		// Enable Orbit Controls and Set Camera Positions
 		const controls = new OrbitControls(camera, renderer.domElement);
